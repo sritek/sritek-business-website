@@ -1,0 +1,225 @@
+﻿1 — PRD: SriTek Business Website (High-level summary)
+Project name: SriTek — Business website (Freelancing / Agency)
+Platform: React (Next.js + TypeScript)
+Design philosophy: Modern, clean, production-grade; bento-box grid sections, strong visual hierarchy, delightful micro-interactions, high-perf, accessible (WCAG-aware), conversion-first (lead capture). Design should feel like a trustworthy engineering partner — confident, technical, and collaborative.
+Primary goal: Convert visitors → qualified leads (contact / Calendly or proposal request)
+Secondary goals: Brand credibility, portfolio proof, SEO for freelancing keywords, hire interest (careers), seed trust for recruitment & SaaS verticals.
+Primary audiences: Startup founders, product managers, small-mid businesses, agency partners, recruiters.
+Target metrics (launch):
+* Page load (LCP) < 2.5s on 75% of visits (desktop)
+
+* Lighthouse performance ≥ 85, accessibility ≥ 90
+
+* Conversion rate (visitor → contact) goal: 2–5% first 3 months
+
+* First 10 qualified leads within 60 days of launch
+
+________________
+
+
+2 — Pages & Content (site map)
+   1. Home / Hero (bento grid intro + hero CTA)
+
+   2. Work / Portfolio (case studies — 3 featured + grid)
+
+   3. Services (clear packages + bento blocks for each offering)
+
+   4. How We Work (process, timelines, pricing bands)
+
+   5. About (team + values + short bios — Yashaswi & Ankita highlight)
+
+   6. Clients & Testimonials (logos, quotes, star metrics)
+
+   7. Blog / Insights (optional — SEO + thought leadership)
+
+   8. Contact / Book a Call (form + Calendly + lead magnet)
+
+   9. Privacy / Terms / Accessibility
+
+   10. Careers / Join Us (optional micro page for interns/managers)
+
+________________
+
+
+3 — Critical UX & UI Patterns
+Hero (first 2 screenfuls)
+      * Left: concise headline + subheading + CTA (primary) + secondary CTA (view work / pricing).
+
+      * Right: a small animated bento-grid or 3D/neumorphic card stack showing product screenshots (subtle parallax).
+
+      * Short proof strip under hero: 3 client logos + one-line metric or client quote.
+
+Bento-grid usage
+         * Use a responsive bento grid for sections (features, case highlights, services). Vary card sizes for hierarchy while preserving a consistent baseline grid. Bento layouts are a current, effective design trend for agency websites. Mockuuups Studio
+
+Portfolio / Case studies
+            * Each case study single-page: Problem → Solution → Tech → Outcome (metrics), with live link / demo and short code-stack. Use animated transitions between cards. Reference Awwwards winners for inspirational layout choices. Awwwards
+
+How We Work (process)
+               * 4-step timeline: Discovery → Ship MVP → Iterate → Support. Each step as a bento-card with icon, short copy, and micro-animation.
+
+Contact / Conversion
+                  * Primary CTA: “Book a 15-min call” (Calendly modal)
+
+                  * Secondary CTA: “Request Proposal” (form: name, company, budget range, timeline, stack, file upload)
+
+                  * Use a sticky floating CTA on scroll for conversion.
+
+________________
+
+
+4 — Components & Tech stack
+Recommended stack (scaffold in Cursor):
+                     * Framework: Next.js (app router) + TypeScript
+
+                     * Styling: Tailwind CSS (utility-first) + component library tokens (use CSS variables for brand colors)
+
+                     * Animations: Framer Motion for page transitions & micro-interactions; GSAP for advanced timeline/scroll-driven effects (only if needed)
+
+                     * 3D / Visuals (optional): react-three-fiber for lightweight product mockups or Lottie animations for illustrations
+
+                     * Image optimization: Next/Image or external image service (imgix/Cloudinary)
+
+                     * CMS / Content: Sanity / Contentful / Strapi (headless) — pick Sanity if you want a developer-friendly studio + structured content (case studies)
+
+                     * Forms & lead capture: React Hook Form + serverless function (Next.js API route) + integrate with Airtable / HubSpot / Notion or Zapier for lead management. Calendly embed for calls.
+
+                     * Analytics: Google Analytics + GA4, Hotjar or FullStory for session heatmaps (optional). Use server-side analytics or Plausible if privacy-minded.
+
+                     * SEO: Next.js meta tags, Open Graph, sitemap, robots, structured data (JSON-LD for Organization + Breadcrumbs)
+
+                     * Auth (admin): 3rd-party admin via CMS. No public auth required.
+
+                     * Hosting & CI: Vercel (recommended) — instant deploys with Next.js; GitHub Actions alternative.
+
+________________
+
+
+5 — Accessibility & Performance Requirements
+                        * WCAG 2.1 AA compliance baseline: semantic HTML, alt text, keyboard navigation, focus outlines. Smart color contrast checks. Smart Insights
+
+                        * Images lazy-loaded, use responsive srcset.
+
+                        * Avoid heavy hero autoplay video; prefer animated SVG or Lottie with reduced-motion support.
+
+                        * Respect prefers-reduced-motion — reduce/disable animations accordingly.
+
+                        * Lighthouse target: Performance ≥ 85, Accessibility ≥ 90, Best Practices ≥ 90, SEO ≥ 90.
+
+________________
+
+
+6 — Animations & Motion direction (specifics)
+                           * Page transitions: smooth fade + upward motion for content blocks (Framer Motion variants).
+
+                           * Hero illustration: parallax card stack with subtle depth (framer-motion + transform: translateZ) or Lottie.
+
+                           * Scroll reveal: staggered card reveals with 3D tilt (Framer Motion + IntersectionObserver).
+
+                           * Microinteractions: hover lift on portfolio cards, CTA ping on hover, animated progress bars on case metrics.
+
+                           * Lead modal: animated modal slide from bottom with backdrop blur.
+
+                           * Performance note: keep animations GPU-accelerated, use will-change sparingly, avoid layout thrash.
+
+________________
+
+
+7 — Content strategy & copy (high-level)
+                              * Tone: confident, friendly, technical.
+
+                              * Hero headline examples:
+
+                                 * “Build. Launch. Scale. With SriTek.”
+
+                                 * “Your full-stack product engineering team — on demand.”
+
+                                    * Use short case-study bullets with measurable outcomes (e.g., “Reduced onboarding dropoff by 28%”, “MVP launched in 21 days”).
+
+                                    * CTA copy: “Book a 15-min call”, “Get a proposal”, “See our work”.
+
+________________
+
+
+8 — SEO, Schema & Launch checklist
+                                       * Meta titles & descriptions per page; prioritize keywords: “MVP development”, “React engineering agency”, “freelance dev agency India / remote”
+
+                                       * JSON-LD: Organization, WebSite (search box), Breadcrumb, LocalBusiness (if you want India-specific signals)
+
+                                       * XML sitemap & robots.txt
+
+                                       * Canonical tags & Open Graph images (social cards)
+
+                                       * Submit sitemap to Google Search Console + Bing Webmaster Tools
+
+________________
+
+
+9 — Analytics, CRM & lead flow
+                                          * Integrate GA4, enable event tracking for: CTA clicks, form submit, calendar booking, outbound demo links.
+
+                                          * Lead flow: Form → Serverless function → Airtable/Notion/HubSpot → Email notification to SriTek inbox + Slack channel.
+
+                                          * Set up a Zap for Calendly bookings → Slack & Google Calendar.
+
+________________
+
+
+10 — Security, privacy & legal
+                                             * HTTPS via hosting (automatic on Vercel/Netlify).
+
+                                             * Cookie banner & basic consent if using Hotjar.
+
+                                             * Privacy policy page + DMCA if needed.
+
+________________
+
+
+11 — Ops: Testing, staging & deploy
+                                                * Environments: dev (local), preview (branch deploys), production.
+
+                                                * CI: GitHub Actions (lint, unit tests, E2E tests optional).
+
+                                                * Testing: Unit tests for critical components (Jest + React Testing Library). Visual regression tests optional (Chromatic).
+
+                                                * Backup: CMS export backups (Sanity has snapshots).
+
+________________
+
+
+12 — Deliverables & Timeline (suggested MVP)
+You asked for a plan doc + Cursor prompt. If you want an execution timeline — here's a tight MVP schedule you can ask Cursor to scaffold:
+                                                   * Day 0: Cursor scaffold Next.js TypeScript + Tailwind + Framer Motion + basic pages
+
+                                                   * Day 1–3: Build components (Hero, Bento grid, Card, Nav, Footer) + Contact form + Calendly integration
+
+                                                   * Day 4–6: Portfolio templates + case study pages + blog skeleton (CMS hookup)
+
+                                                   * Day 7: SEO, analytics, accessibility audit, Lighthouse fixes, deploy to Vercel.
+
+(These are sprint-like tasks; adjust according to how much you’ll hand-build vs. use Cursor output.)
+________________
+
+
+13 — Acceptance criteria (what “done” looks like)
+                                                      * Responsive site across mobile/tablet/desktop with bento grid preserved
+
+                                                      * Hero with animated visual and working primary CTA (Calendly + form)
+
+                                                      * 3 case studies published (real or demo) with metrics and tech stack
+
+                                                      * Contact form saves leads to Airtable (or chosen DB) and notifies Slack/email
+
+                                                      * Lighthouse performance & accessibility meet targets listed above
+
+                                                      * Deployed to Vercel with custom domain and HTTPS
+
+________________
+
+
+14 — Inspiration & references (select reading)
+                                                         * Awwwards — agency & portfolio winners for interactions and layout ideas. Awwwards
+
+                                                         * Bento-grid trend articles & examples for layout inspiration. Mockuuups Studio+1
+
+                                                         * Web design trends (accessibility, 3D / motion) — SmartInsights / InMotion.
