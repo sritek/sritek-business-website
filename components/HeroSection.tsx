@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { homepageContent } from "@/utils/site-content";
 
 export default function HeroSection() {
   return (
@@ -21,7 +22,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              Build. Launch. Scale.
+              {homepageContent.hero.title}
               <br />
               <span className="text-primary-600">With SriTek.</span>
             </motion.h1>
@@ -31,8 +32,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              We build full-stack web products — MVPs, dashboards, and
-              automations — using modern JavaScript and TypeScript.
+              {homepageContent.hero.description}
             </motion.p>
             <motion.div
               className="flex flex-col sm:flex-row gap-4"
@@ -44,14 +44,14 @@ export default function HeroSection() {
                 href="/contact"
                 className="inline-flex items-center justify-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-all hover:scale-105 shadow-lg hover:shadow-xl"
               >
-                Book a 15-min Call
+                {homepageContent.hero.ctaPrimary}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
               <Link
                 href="/work"
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-primary-600 hover:text-primary-600 transition-all"
               >
-                See Our Work
+                {homepageContent.hero.ctaSecondary}
               </Link>
             </motion.div>
           </motion.div>
@@ -110,4 +110,3 @@ export default function HeroSection() {
     </section>
   );
 }
-

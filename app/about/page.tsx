@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { aboutPageContent } from "@/utils/site-content";
 
 export const metadata: Metadata = {
   title: "About Us — SriTek Team | Product Engineering Agency",
@@ -9,53 +10,26 @@ export const metadata: Metadata = {
     "Meet the SriTek team: Yashaswi and Ankita. We&apos;re a product engineering agency specializing in MVPs, dashboards, and automations.",
 };
 
-const values = [
-  {
-    title: "Quality First",
-    description:
-      "We write clean, maintainable code and follow best practices to ensure your product is built to last.",
-  },
-  {
-    title: "Fast Delivery",
-    description:
-      "We move quickly without sacrificing quality, helping you launch faster and iterate sooner.",
-  },
-  {
-    title: "Transparent Communication",
-    description:
-      "You&apos;ll always know what&apos;s happening with regular updates and clear, honest communication.",
-  },
-  {
-    title: "Long-term Partnership",
-    description:
-      "We&apos;re not just contractors—we&apos;re your engineering partners, invested in your success.",
-  },
-];
-
 export default function AboutPage() {
   return (
     <div className="min-h-screen pt-20 pb-24 bg-white">
       <div className="container mx-auto px-4 py-16 max-w-5xl">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-            About SriTek
+            {aboutPageContent.title}
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            We&apos;re a product engineering agency that helps startups and businesses
-            build, launch, and scale their digital products.
+            {aboutPageContent.description}
           </p>
         </div>
 
         {/* Story */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-6 text-gray-900">Our Story</h2>
+          <h2 className="text-3xl font-bold mb-6 text-gray-900">
+            {aboutPageContent.story.title}
+          </h2>
           <div className="prose prose-lg max-w-none text-gray-700">
-            <p className="mb-4">
-              SriTek was founded with a simple mission: to help businesses turn
-              their ideas into reality through exceptional engineering and
-              thoughtful design. We specialize in building MVPs, dashboards, and
-              automations using modern JavaScript and TypeScript.
-            </p>
+            <p className="mb-4">{aboutPageContent.story.description}</p>
             <p className="mb-4">
               What sets us apart is our focus on being a true engineering
               partner—not just a service provider. We work closely with our
@@ -104,11 +78,9 @@ export default function AboutPage() {
 
         {/* Values */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-gray-900">
-            Our Values
-          </h2>
+          <h2 className="text-3xl font-bold mb-8 text-gray-900">Our Values</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {values.map((value, index) => (
+            {aboutPageContent.ourValues.values.map((value, index) => (
               <div
                 key={index}
                 className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow"
@@ -125,34 +97,27 @@ export default function AboutPage() {
         {/* Work Culture */}
         <section className="mb-16 bg-gray-50 rounded-2xl p-8 md:p-12">
           <h2 className="text-3xl font-bold mb-6 text-gray-900">
-            How We Work
+            {aboutPageContent.howWeWork.title}
           </h2>
           <div className="prose prose-lg max-w-none text-gray-700">
-            <p className="mb-4">
-              We believe in collaboration, transparency, and continuous
-              improvement. Our process is designed to keep you in the loop at
-              every step, from initial discovery to launch and beyond.
-            </p>
-            <p>
-              We&apos;re always learning, experimenting with new technologies, and
-              refining our approach to deliver better results for our clients.
-            </p>
+            <p className="mb-4">{aboutPageContent.howWeWork.description.d1}</p>
+            <p>{aboutPageContent.howWeWork.description.d2}</p>
           </div>
         </section>
 
         {/* CTA */}
         <section className="text-center">
           <h2 className="text-3xl font-bold mb-4 text-gray-900">
-            Let&apos;s Work Together
+            {aboutPageContent.cta.title}
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Ready to build something great? Let&apos;s start a conversation.
+            {aboutPageContent.cta.description}
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
           >
-            Get in Touch
+            {aboutPageContent.cta.ctaPrimary}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </section>
@@ -160,4 +125,3 @@ export default function AboutPage() {
     </div>
   );
 }
-

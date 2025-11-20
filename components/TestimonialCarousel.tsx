@@ -4,36 +4,10 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import Image from "next/image";
+import { homepageContent } from "@/utils/site-content";
+import { Testimonial } from "@/types";
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Sarah Chen",
-    role: "Founder, StartupCo",
-    content:
-      "SriTek delivered our MVP in just 21 days. The team is professional, responsive, and truly understands product development. Highly recommend!",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100",
-  },
-  {
-    id: 2,
-    name: "Michael Rodriguez",
-    role: "Product Manager, TechCorp",
-    content:
-      "Working with SriTek has been a game-changer. They built a complex dashboard that reduced our reporting time by 40%. Exceptional work!",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
-  },
-  {
-    id: 3,
-    name: "Emily Watson",
-    role: "CEO, InnovateLabs",
-    content:
-      "The landing page SriTek created increased our signups by 45%. Their attention to detail and conversion optimization expertise is outstanding.",
-    rating: 5,
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100",
-  },
-];
+const testimonials: Testimonial[] = homepageContent.testimonials.testimonials;
 
 export default function TestimonialCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -126,9 +100,7 @@ export default function TestimonialCarousel() {
               key={index}
               onClick={() => goToSlide(index)}
               className={`w-2 h-2 rounded-full transition-all ${
-                index === currentIndex
-                  ? "bg-primary-600 w-8"
-                  : "bg-gray-300"
+                index === currentIndex ? "bg-primary-600 w-8" : "bg-gray-300"
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />
@@ -145,4 +117,3 @@ export default function TestimonialCarousel() {
     </div>
   );
 }
-

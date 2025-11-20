@@ -6,6 +6,7 @@ import TestimonialCarousel from "@/components/TestimonialCarousel";
 import ProcessSteps from "@/components/ProcessSteps";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
+import { homepageContent } from "@/utils/site-content";
 
 export default function Home() {
   const services = [
@@ -72,7 +73,8 @@ export default function Home() {
       title: "Landing Page for SaaS Launch",
       description:
         "Designed and developed a conversion-optimized landing page that increased signups by 45%.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
       metrics: "45% signup increase, 2.3s load time",
       tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
       slug: "saas-landing",
@@ -82,26 +84,32 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <HeroSection />
-      
+
       {/* Proof Strip */}
       <section className="py-12 bg-gray-50 border-y border-gray-200">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             <div className="text-center">
-              <p className="text-sm text-gray-600 mb-1">Trusted by</p>
+              <p className="text-sm text-gray-600 mb-1">
+                {homepageContent.trustStrip.trustedBy.title}
+              </p>
               <div className="flex items-center gap-4 text-gray-400">
-                <span className="text-lg font-semibold">StartupCo</span>
-                <span className="text-lg font-semibold">TechCorp</span>
-                <span className="text-lg font-semibold">InnovateLabs</span>
+                <span className="text-lg font-semibold">
+                  {homepageContent.trustStrip.trustedBy.clients.join(", ")}
+                </span>
               </div>
             </div>
             <div className="text-center">
-              <p className="text-2xl font-bold text-primary-600">50+</p>
-              <p className="text-sm text-gray-600">Projects Delivered</p>
+              <p className="text-2xl font-bold text-primary-600">
+                {homepageContent.trustStrip.metric.count}+
+              </p>
+              <p className="text-sm text-gray-600">
+                {homepageContent.trustStrip.metric.label}
+              </p>
             </div>
             <div className="text-center">
               <p className="text-sm text-gray-600 italic">
-                &ldquo;Reduced onboarding dropoff by 28%&rdquo;
+                {homepageContent.trustStrip.testimonial}
               </p>
             </div>
           </div>
@@ -113,14 +121,14 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              What We Build
+              {homepageContent.services.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Full-stack products that scale from MVP to production
+              {homepageContent.services.description}
             </p>
           </div>
           <BentoGrid>
-            {services.map((service, index) => (
+            {homepageContent.services.services.map((service, index) => (
               <ServiceCard
                 key={service.id}
                 title={service.title}
@@ -139,10 +147,10 @@ export default function Home() {
           <div className="flex justify-between items-center mb-16">
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                Featured Work
+                {homepageContent.featuredWork.title}
               </h2>
               <p className="text-xl text-gray-600">
-                Real projects, measurable results
+                {homepageContent.featuredWork.description}
               </p>
             </div>
             <Link
@@ -154,7 +162,7 @@ export default function Home() {
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredCases.map((project, index) => (
+            {homepageContent.featuredWork.projects.map((project, index) => (
               <CaseCard key={project.id} project={project} index={index} />
             ))}
           </div>
@@ -175,10 +183,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              How We Work
+              {homepageContent.howWeWork.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              A proven process from discovery to launch and beyond
+              {homepageContent.howWeWork.description}
             </p>
           </div>
           <ProcessSteps />
@@ -201,23 +209,23 @@ export default function Home() {
       <section className="py-24 bg-primary-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Build Your Product?
+            {homepageContent.finalCTA.title}
           </h2>
           <p className="text-xl mb-8 text-primary-100 max-w-2xl mx-auto">
-            Let&apos;s discuss your project and see how we can help you launch faster.
+            {homepageContent.finalCTA.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
             >
-              Book a 15-min Call
+              {homepageContent.finalCTA.ctaPrimary}
             </Link>
             <Link
               href="/work"
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors"
             >
-              See Our Work
+              {homepageContent.finalCTA.ctaSecondary}
             </Link>
           </div>
         </div>
@@ -225,4 +233,3 @@ export default function Home() {
     </div>
   );
 }
-

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Mail, Linkedin, Github, Twitter } from "lucide-react";
+import { footerContent, homepageContent } from "@/utils/site-content";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,22 +25,20 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold text-white mb-4">SriTek</h3>
-            <p className="mb-4 max-w-md">
-              Your full-stack product engineering team — on demand. We build
-              MVPs, dashboards, and automations using modern JavaScript and
-              TypeScript.
-            </p>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              {footerContent.title}
+            </h3>
+            <p className="mb-4 max-w-md">{footerContent.description}</p>
             <div className="flex gap-4">
               <a
-                href="mailto:hello@sritek.com"
+                href={`mailto:${process.env.OFFICIAL_CONTACT_EMAIL}`}
                 className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
                 aria-label="Email"
               >
                 <Mail size={20} />
               </a>
               <a
-                href="https://linkedin.com/company/sritek"
+                href={footerContent.links.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
@@ -48,7 +47,7 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
-                href="https://github.com/sritek"
+                href={footerContent.links.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
@@ -57,7 +56,7 @@ export default function Footer() {
                 <Github size={20} />
               </a>
               <a
-                href="https://twitter.com/sritek"
+                href={footerContent.links.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
@@ -72,7 +71,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Company</h4>
             <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
+              {footerContent.links.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -89,7 +88,7 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4">Legal</h4>
             <ul className="space-y-2">
-              {footerLinks.legal.map((link) => (
+              {footerContent.links.legal.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -104,13 +103,9 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
-          <p>
-            © {currentYear} SriTek. All rights reserved. Built with Next.js and
-            TypeScript.
-          </p>
+          <p>{footerContent.copyright}</p>
         </div>
       </div>
     </footer>
   );
 }
-

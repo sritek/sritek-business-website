@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { headerContent } from "@/utils/site-content";
+import { routes } from "@/utils/routes";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,33 +19,26 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { href: "/", label: "Home" },
-    { href: "/work", label: "Work" },
-    { href: "/services", label: "Services" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
-  ];
-
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/80 backdrop-blur-md shadow-sm"
-          : "bg-transparent"
+        isScrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
       }`}
     >
       <nav className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold text-primary-600">
-            SriTek
+          <Link
+            href={routes.home}
+            className="text-2xl font-bold text-primary-600"
+          >
+            {headerContent.companyName}
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
+            {headerContent.navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
@@ -53,10 +48,10 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/contact"
+              href={routes.contact}
               className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-semibold"
             >
-              Book a Call
+              {headerContent.ctaPrimary}
             </Link>
           </div>
 
@@ -81,7 +76,7 @@ export default function Header() {
             className="md:hidden bg-white border-t border-gray-200"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-              {navLinks.map((link) => (
+              {headerContent.navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -92,11 +87,11 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                href="/contact"
+                href={routes.contact}
                 className="px-6 py-2 bg-primary-600 text-white rounded-lg hover:bg-primary-700 transition-colors font-semibold text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Book a Call
+                {headerContent.ctaPrimary}
               </Link>
             </div>
           </motion.div>
@@ -105,4 +100,3 @@ export default function Header() {
     </motion.header>
   );
 }
-

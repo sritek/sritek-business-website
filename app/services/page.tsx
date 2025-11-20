@@ -3,6 +3,7 @@ import ServiceCard from "@/components/ServiceCard";
 import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { servicesPageContent } from "@/utils/site-content";
 
 export const metadata: Metadata = {
   title: "Services — What We Build | SriTek",
@@ -94,16 +95,15 @@ export default function ServicesPage() {
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-            Our Services
+            {servicesPageContent.title}
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Full-stack product engineering services to take your idea from
-            concept to launch.
+            {servicesPageContent.description}
           </p>
         </div>
 
         <BentoGrid className="mb-16">
-          {services.map((service, index) => (
+          {servicesPageContent.servicesCards.map((service, index) => (
             <ServiceCard
               key={service.id}
               title={service.title}
@@ -120,49 +120,53 @@ export default function ServicesPage() {
             What&apos;s Included
           </h2>
           <div className="space-y-8">
-            {services.map((service) => (
-              <div
-                key={service.id}
-                className="bg-gray-50 rounded-2xl p-8 border border-gray-200"
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <span className="text-4xl">{service.icon}</span>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2 text-gray-900">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 mb-6">{service.description}</p>
+            {servicesPageContent.whatIncluded.servicesDescriptions.map(
+              (service) => (
+                <div
+                  key={service.id}
+                  className="bg-gray-50 rounded-2xl p-8 border border-gray-200"
+                >
+                  <div className="flex items-start gap-4 mb-4">
+                    <span className="text-4xl">{service.icon}</span>
+                    <div>
+                      <h3 className="text-2xl font-bold mb-2 text-gray-900">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-600 mb-6">
+                        {service.description}
+                      </p>
+                    </div>
                   </div>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {service.features.map((feature, index) => (
+                      <li
+                        key={index}
+                        className="flex items-center gap-2 text-gray-700"
+                      >
+                        <span className="text-primary-600">✓</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  {service.features.map((feature, index) => (
-                    <li
-                      key={index}
-                      className="flex items-center gap-2 text-gray-700"
-                    >
-                      <span className="text-primary-600">✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+              )
+            )}
           </div>
         </div>
 
         {/* CTA */}
         <div className="mt-16 text-center">
           <h2 className="text-3xl font-bold mb-4 text-gray-900">
-            Ready to Get Started?
+            {servicesPageContent.cta.title}
           </h2>
           <p className="text-lg text-gray-600 mb-8">
-            Let&apos;s discuss your project and find the right solution for you.
+            {servicesPageContent.cta.description}
           </p>
           <Link
             href="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
           >
-            Book a 15-min Call
+            {servicesPageContent.cta.ctaPrimary}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
@@ -170,4 +174,3 @@ export default function ServicesPage() {
     </div>
   );
 }
-
