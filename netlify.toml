@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  # publish directory is handled by the plugin for Next.js
+  publish = ".netlify/output"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Optional: set environment variables only for local builds (not required)
+# [context.production.environment]
+#   NEXT_PUBLIC_API_URL = "https://api.example.com"
+
+# Optional: Custom redirects (if needed)
+# [[redirects]]
+#   from = "/*"
+#   to = "/404"
+#   status = 200
