@@ -1,5 +1,7 @@
 import { routes } from "./routes";
 
+const OFFICIAL_CONTACT_EMAIL = "business.sritek@gmail.com";
+
 const servicesContent = [
   {
     id: 1,
@@ -320,5 +322,23 @@ export const aboutPageContent = {
     title: "Let's Work Together",
     description: "Ready to build something great? Let's start a conversation.",
     ctaPrimary: "Get in Touch",
+  },
+};
+
+export const contactPageContent = {
+  title: "Get in Touch",
+  description:
+    "Let's discuss your project and see how we can help you build, launch, and scale your product.",
+  bookACall: {
+    title: "Book a Call",
+    description: "Schedule a 15-minute discovery call",
+    action: {
+      title: "Open Calendar",
+    },
+  },
+  otherWaysToReach: {
+    title: "Other Ways to Reach Us",
+    email: OFFICIAL_CONTACT_EMAIL,
+    responseTime: "We typically respond within 24 hours",
   },
 };

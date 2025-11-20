@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { Calendar } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import Modal from "@/components/Modal";
-import { Calendar } from "lucide-react";
+import { contactPageContent } from "@/utils/site-content";
 
 // Note: Metadata should be in a separate layout or use next/head for client components
 // For now, SEO is handled in the root layout
@@ -16,25 +18,25 @@ export default function ContactPage() {
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-gray-900">
-            Get in Touch
+            {contactPageContent.title}
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Let&apos;s discuss your project and see how we can help you build,
-            launch, and scale your product.
+            {contactPageContent.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <div>
-            <h2 className="text-2xl font-bold mb-6 text-gray-900">
-              Request a Proposal
-            </h2>
             <ContactForm />
           </div>
 
           {/* Calendly & Info */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             <div className="bg-white rounded-2xl p-8 shadow-lg mb-8">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
@@ -42,10 +44,10 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-gray-900">
-                    Book a Call
+                    {contactPageContent.bookACall.title}
                   </h3>
                   <p className="text-gray-600">
-                    Schedule a 15-minute discovery call
+                    {contactPageContent.bookACall.description}
                   </p>
                 </div>
               </div>
@@ -53,13 +55,13 @@ export default function ContactPage() {
                 onClick={() => setIsCalendlyOpen(true)}
                 className="w-full px-6 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
               >
-                Open Calendar
+                {contactPageContent.bookACall.action.title}
               </button>
             </div>
 
             <div className="bg-white rounded-2xl p-8 shadow-lg">
               <h3 className="text-xl font-bold mb-6 text-gray-900">
-                Other Ways to Reach Us
+                {contactPageContent.otherWaysToReach.title}
               </h3>
               <div className="space-y-4">
                 <div>
@@ -68,7 +70,7 @@ export default function ContactPage() {
                     href="mailto:hello@sritek.com"
                     className="text-primary-600 hover:text-primary-700 font-medium"
                   >
-                    hello@sritek.com
+                    {contactPageContent.otherWaysToReach.email}
                   </a>
                 </div>
                 <div>
@@ -79,7 +81,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -103,4 +105,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { headerContent } from "@/utils/site-content";
 import { routes } from "@/utils/routes";
+import companyLogo from "@/app/icon.png";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,9 +33,17 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link
             href={routes.home}
-            className="text-2xl font-bold text-primary-600"
+            className="text-2xl font-bold text-primary-600 font-mono"
           >
             {headerContent.companyName}
+            {/* <Image
+              src={"/sritek-logo.png"}
+              alt={"SriTek Logo"}
+              className="object-cover group-hover:scale-110 transition-transform duration-500"
+              height={20}
+              width={60}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            /> */}
           </Link>
 
           {/* Desktop Navigation */}
