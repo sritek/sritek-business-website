@@ -50,24 +50,24 @@ export default function Home() {
   const featuredCases = [
     {
       id: 1,
-      title: "SaaS Dashboard for Finance Startup",
+      title: "Carolina Luminary Lounge",
       description:
-        "Built a comprehensive financial dashboard with real-time analytics and reporting.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-      metrics: "40% faster reporting, 28% user engagement increase",
-      tech: ["React", "TypeScript", "Chart.js"],
-      slug: "finance-dashboard",
-    },
+        "Official website for Carolina Luminary Lounge — an immersive rooftop lounge in Jaipur featuring bespoke cocktails, curated performances, signature dishes, and an unforgettable neon-lit nightlife experience.",
+      image: "/carolina.png",
+      metrics: "Featured signature menu, reservations, events & gallery sections",
+      tech: ["Next.js", "Tailwind CSS", "React", "Vercel Hosting"],
+      slug: "carolina-luminary-lounge"
+    },  
     {
       id: 2,
-      title: "Marketplace MVP for Local Vendors",
+      title: "Soni Dental Hospital",
       description:
-        "Launched a marketplace platform connecting local vendors with customers in 21 days.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-      metrics: "MVP in 21 days, 500+ active vendors",
-      tech: ["Next.js", "PostgreSQL", "Stripe"],
-      slug: "marketplace-mvp",
-    },
+        "Leading dental care clinic in Jaipur offering advanced treatments including implants, braces & aligners, root canal, crowns, laser dentistry, pediatric care, and more with modern technology and expert specialists.",
+      image: "/sonidental.png",
+      metrics: "55,000+ happy patients, 5+ expert doctors, 99.5% success rate",
+      tech: ["Orthodontics", "Dental Implants", "Laser Dentistry", "Pediatric Dentistry"],
+      slug: "soni-dental-hospital"
+    }, 
     {
       id: 3,
       title: "Landing Page for SaaS Launch",
