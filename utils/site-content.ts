@@ -121,7 +121,6 @@ export const footerContent = {
     ],
     social: {
       linkedin: "https://linkedin.com/company/sritek",
-      github: "https://github.com/sritek",
       twitter: "https://twitter.com/sritek",
     },
   },
@@ -164,37 +163,33 @@ export const homepageContent = {
     projects: [
       {
         id: 1,
-        title: "SaaS Dashboard for Finance Startup",
+        title: "Carolina Luminary Lounge",
         description:
-          "Built a comprehensive financial dashboard with real-time analytics and reporting.",
-        image:
-          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-        metrics: "40% faster reporting, 28% user engagement increase",
-        tech: ["React", "TypeScript", "Chart.js"],
-        slug: "finance-dashboard",
-      },
+          "Official website for Carolina Luminary Lounge — an immersive rooftop lounge in Jaipur featuring bespoke cocktails, curated performances, signature dishes, and an unforgettable neon-lit nightlife experience.",
+        image: "/carolina.png",
+        metrics: "Featured signature menu, reservations, events & gallery sections",
+        tech: ["Next.js", "Tailwind CSS", "React", "Vercel Hosting"],
+        slug: "carolina-luminary-lounge"
+      },  
       {
         id: 2,
-        title: "Marketplace MVP for Local Vendors",
+        title: "Soni Dental Hospital",
         description:
-          "Launched a marketplace platform connecting local vendors with customers in 21 days.",
-        image:
-          "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-        metrics: "MVP in 21 days, 500+ active vendors",
-        tech: ["Next.js", "PostgreSQL", "Stripe"],
-        slug: "marketplace-mvp",
-      },
+          "Leading dental care clinic in Jaipur offering advanced treatments including implants, braces & aligners, root canal, crowns, laser dentistry, pediatric care, and more with modern technology and expert specialists.",
+        image: "/sonidental.png",
+        metrics: "55,000+ happy patients, 5+ expert doctors, 99.5% success rate",
+        tech: ["Orthodontics", "Dental Implants", "Laser Dentistry", "Pediatric Dentistry"],
+        slug: "soni-dental-hospital"
+      }, 
       {
-        id: 3,
-        title: "Landing Page for SaaS Launch",
-        description:
-          "Designed and developed a conversion-optimized landing page that increased signups by 45%.",
-        image:
-          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
-        metrics: "45% signup increase, 2.3s load time",
-        tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-        slug: "saas-landing",
-      },
+        "id": 3,
+        "title": "Kismat Silver — Fine Jewellery Storefront",
+        "description": "Designed and developed a premium e-commerce storefront for Kismat Silver featuring curated jewellery collections and an AI-powered product selection experience.",
+        "image": "/KismatSilver.png",
+        "metrics": "Improved product discovery, AI-driven recommendations, optimized shopping flow",
+        "tech": ["Next.js", "Tailwind CSS", "Framer Motion", "AWS"],
+        "slug": "kismat-silver"
+      },      
     ],
   },
   howWeWork: {
@@ -207,33 +202,33 @@ export const homepageContent = {
     testimonials: [
       {
         id: 1,
-        name: "Sarah Chen",
-        role: "Founder, StartupCo",
+        name: "Pankaj Soni",
+        role: "Founder, Kismat Silver",
         content:
           "SriTek delivered our MVP in just 21 days. The team is professional, responsive, and truly understands product development. Highly recommend!",
-        rating: 5,
+        rating: 4,
         image:
-          "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100",
+          "https://images.lifestyleasia.com/wp-content/uploads/sites/7/2021/11/15123519/KRISHAN-KUMAR-SONI-DIRECTOR-806x740.jpg",
       },
       {
         id: 2,
-        name: "Michael Rodriguez",
-        role: "Product Manager, TechCorp",
+        name: "Dr.Pawan Soni",
+        role: "Founder, Soni Dental Hospital",
         content:
           "Working with SriTek has been a game-changer. They built a complex dashboard that reduced our reporting time by 40%. Exceptional work!",
         rating: 5,
         image:
-          "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100",
+          "https://sonidentalhospital.com/images/Dr.Pawan%20Soni.webp",
       },
       {
         id: 3,
-        name: "Emily Watson",
-        role: "CEO, InnovateLabs",
+        name: "Om Prakash",
+        role: "Founder, Carolina Luminary Lounge",
         content:
           "The landing page SriTek created increased our signups by 45%. Their attention to detail and conversion optimization expertise is outstanding.",
         rating: 5,
         image:
-          "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100",
+          "https://media.licdn.com/dms/image/v2/C5103AQHsf9FK2n-k5g/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516515735773?e=2147483647&v=beta&t=J06AxvpB1o62r2AnQAbRKEVDbVsFWWncaLMW7XGMBjE",
       },
     ],
   },

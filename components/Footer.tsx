@@ -47,15 +47,6 @@ export default function Footer() {
                 <Linkedin size={20} />
               </a>
               <a
-                href={footerContent.links.social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition-colors"
-                aria-label="GitHub"
-              >
-                <Github size={20} />
-              </a>
-              <a
                 href={footerContent.links.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"

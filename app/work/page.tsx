@@ -10,34 +10,33 @@ export const metadata: Metadata = {
 const projects = [
   {
     id: 1,
-    title: "SaaS Dashboard for Finance Startup",
+    title: "Carolina Luminary Lounge",
     description:
-      "Built a comprehensive financial dashboard with real-time analytics, reporting, and data visualization for a fintech startup.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
-    metrics: "40% faster reporting, 28% user engagement increase",
-    tech: ["React", "TypeScript", "Chart.js", "Node.js"],
-    slug: "finance-dashboard",
-  },
+      "Official website for Carolina Luminary Lounge — an immersive rooftop lounge in Jaipur featuring bespoke cocktails, curated performances, signature dishes, and an unforgettable neon-lit nightlife experience.",
+    image: "/carolina.png",
+    metrics: "Featured signature menu, reservations, events & gallery sections",
+    tech: ["Next.js", "Tailwind CSS", "React", "Vercel Hosting"],
+    slug: "carolina-luminary-lounge"
+  },  
   {
     id: 2,
-    title: "Marketplace MVP for Local Vendors",
+    title: "Soni Dental Hospital",
     description:
-      "Launched a marketplace platform connecting local vendors with customers. Built and deployed in just 21 days.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
-    metrics: "MVP in 21 days, 500+ active vendors",
-    tech: ["Next.js", "PostgreSQL", "Stripe", "AWS"],
-    slug: "marketplace-mvp",
-  },
+      "Leading dental care clinic in Jaipur offering advanced treatments including implants, braces & aligners, root canal, crowns, laser dentistry, pediatric care, and more with modern technology and expert specialists.",
+    image: "/sonidental.png",
+    metrics: "55,000+ happy patients, 5+ expert doctors, 99.5% success rate",
+    tech: ["Orthodontics", "Dental Implants", "Laser Dentistry", "Pediatric Dentistry"],
+    slug: "soni-dental-hospital"
+  },  
   {
-    id: 3,
-    title: "Landing Page for SaaS Launch",
-    description:
-      "Designed and developed a conversion-optimized landing page that increased signups by 45% and reduced bounce rate.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
-    metrics: "45% signup increase, 2.3s load time",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    slug: "saas-landing",
-  },
+    "id": 3,
+    "title": "Kismat Silver — Fine Jewellery Storefront",
+    "description": "Designed and developed a premium e-commerce storefront for Kismat Silver featuring curated jewellery collections and an AI-powered product selection experience.",
+    "image": "/KismatSilver.png",
+    "metrics": "Improved product discovery, AI-driven recommendations, optimized shopping flow",
+    "tech": ["Next.js", "Tailwind CSS", "Framer Motion", "AWS"],
+    "slug": "kismat-silver"
+  },  
   {
     id: 4,
     title: "E-commerce Platform with Admin Panel",

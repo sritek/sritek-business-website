@@ -19,60 +19,59 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
   {
-    slug: "finance-dashboard",
-    title: "SaaS Dashboard for Finance Startup",
+    slug: "carolina-luminary-lounge",
+    title: "Carolina Luminary Lounge",
     description:
-      "Built a comprehensive financial dashboard with real-time analytics and reporting.",
+      "An immersive rooftop lounge experience in Jaipur featuring bespoke cocktails, signature dishes, curated music events, and a vibrant nightlife atmosphere.",
     problem:
-      "The client needed a way to visualize complex financial data in real-time, with customizable reports and dashboards for different user roles.",
+      "The client wanted a dynamic online presence that captures the ambience, menu offerings, events, and reservation experience for visitors in a visually appealing way.",
     solution:
-      "We built a modern React dashboard with TypeScript, implementing real-time data updates, interactive charts, and role-based access control. The solution included automated report generation and export functionality.",
-    tech: ["React", "TypeScript", "Chart.js", "Node.js", "PostgreSQL"],
+      "We developed a modern, responsive Next.js site highlighting Carolina’s menu, curated events, gallery, and table reservations — aimed at boosting customer engagement and on-site bookings.",
+    tech: ["Next.js", "React", "Tailwind CSS", "Vercel"],
     metrics: [
-      "40% faster reporting time",
-      "28% increase in user engagement",
-      "99.9% uptime",
-      "Sub-2s page load time",
+      "Interactive menu & events showcase",
+      "Online reservations integration",
+      "Gallery to boost visual engagement",
+      "Multi-section user flow (Menu, Events, Contact)"
     ],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200",
-    liveUrl: "https://example.com",
-  },
+    image: "/carolina.png",
+    liveUrl: "https://carolina-website-orcin.vercel.app/"
+  },  
   {
-    slug: "marketplace-mvp",
-    title: "Marketplace MVP for Local Vendors",
+    slug: "soni-dental-hospital",
+    title: "Soni Dental Hospital",
     description:
-      "Launched a marketplace platform connecting local vendors with customers in 21 days.",
+      "Premier dental clinic in Jaipur offering comprehensive dental services including implants, braces & aligners, root canal, crowns, pediatric care, laser dentistry, and more with expert care and modern technology.",
     problem:
-      "Local vendors needed a platform to reach customers online, but existing solutions were too expensive and complex for small businesses.",
+      "Patients in Jaipur needed a trusted dental care provider that could offer advanced treatments, personalized care, and a full range of services under one roof using the latest technology.",
     solution:
-      "We built a streamlined MVP using Next.js with a focus on simplicity and speed. The platform included vendor onboarding, product listings, payment processing, and order management.",
-    tech: ["Next.js", "PostgreSQL", "Stripe", "AWS", "Tailwind CSS"],
+      "We designed and presented a professional website for Soni Dental Hospital showcasing their range of dental services, expert team, patient testimonials, and easy appointment booking to enhance patient engagement and online presence.",
+    tech: ["Next.js", "Responsive Web Design", "CMS/SEO Optimization", "Tailwind CSS"],
     metrics: [
-      "MVP launched in 21 days",
-      "500+ active vendors",
-      "10k+ monthly transactions",
-      "4.8/5 average vendor rating",
+      "55,000+ happy patients",
+      "5+ expert doctors",
+      "99.5% treatment success rate",
+      "24/7 emergency care availability"
     ],
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200",
-  },
+    image: "/sonidental.png",
+    liveUrl: "https://sonidentalhospital.com/"
+  },  
   {
-    slug: "saas-landing",
-    title: "Landing Page for SaaS Launch",
-    description:
-      "Conversion-optimized landing page that increased signups by 45%.",
-    problem:
-      "The existing landing page had a high bounce rate and low conversion rate, failing to communicate value effectively.",
-    solution:
-      "We redesigned the landing page with a focus on clear value propositions, social proof, and optimized CTAs. Implemented A/B testing and performance optimizations.",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-    metrics: [
-      "45% increase in signups",
-      "2.3s page load time",
-      "60% reduction in bounce rate",
-      "Lighthouse score: 95+",
+    "slug": "kismat-silver",
+    "title": "Kismat Silver — Premium Jewellery E-Commerce Experience",
+    "description": "A modern, visually immersive jewellery storefront showcasing handcrafted silver collections with an AI-powered product selection experience.",
+    "problem": "Kismat Silver needed a polished, high-conversion online shopping experience that highlights product craftsmanship, supports curated collections, and builds brand trust.",
+    "solution": "We built a fully responsive Next.js storefront with Tailwind CSS and Framer Motion, featuring curated collections (Lunar, Ethereal, Celestial, Artisan), an AI-powered 'Find Your Soul Stone' selector, smooth product browsing, and brand storytelling sections. Integrated SEO, fast hosting, and optimized images for improved conversions.",
+    "tech": ["Next.js", "Tailwind CSS", "Framer Motion", "AWS", "SEO Optimization"],
+    "metrics": [
+      "AI-powered product selector improves discovery",
+      "Enhanced conversions with optimized UI/UX",
+      "Curated collections improving user navigation",
+      "10% first-order discount integration (KISMAT10)"
     ],
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200",
-  },
+    "image": "/KismatSilver.png",
+    "liveUrl": "https://kismatsilver.netlify.app/"
+  },  
 ];
 
 export async function generateMetadata({
