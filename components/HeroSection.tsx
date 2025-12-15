@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { homepageContent } from "@/utils/site-content";
+import TiltCard from "@/components/TiltCard";
 
 export default function HeroSection() {
   return (
@@ -56,46 +57,70 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right: Animated Bento Grid Visual */}
+          {/* Right: 3D Tilt Cards */}
           <motion.div
             className="relative"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3, duration: 0.6 }}
+            style={{ perspective: "1000px" }}
           >
             <div className="grid grid-cols-2 gap-4">
-              {[1, 2, 3, 4].map((item, index) => (
-                <motion.div
-                  key={item}
-                  className={`bg-gradient-to-br ${
-                    index === 0
-                      ? "from-primary-500 to-primary-700 col-span-2 h-48"
-                      : index === 1
-                      ? "from-purple-500 to-purple-700 h-32"
-                      : index === 2
-                      ? "from-blue-500 to-blue-700 h-32"
-                      : "from-gray-400 to-gray-600 col-span-2 h-24"
-                  } rounded-2xl shadow-xl`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{
-                    delay: 0.5 + index * 0.1,
-                    duration: 0.5,
-                  }}
-                  whileHover={{
-                    scale: 1.05,
-                    rotate: index % 2 === 0 ? 1 : -1,
-                    transition: { duration: 0.2 },
-                  }}
-                >
-                  <div className="h-full flex items-center justify-center text-white text-2xl font-bold">
-                    {index === 0 && "🚀"}
-                    {index === 1 && "💻"}
-                    {index === 2 && "⚡"}
-                    {index === 3 && "📊"}
-                  </div>
-                </motion.div>
-              ))}
+              <TiltCard
+                image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop&q=80"
+                imageAlt="Business Growth and Scaling"
+                height="h-48"
+                colSpan={2}
+                intensity={15}
+              >
+                <div className="text-white text-center drop-shadow-lg px-4">
+                  <p className="text-2xl md:text-3xl font-bold">
+                    Build. Launch. Scale.
+                  </p>
+                  <p className="text-sm md:text-base mt-1 opacity-90">
+                    Turn Ideas Into Reality
+                  </p>
+                </div>
+              </TiltCard>
+              <TiltCard
+                image="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&h=320&fit=crop&q=80"
+                imageAlt="Web Development and Coding"
+                height="h-32"
+                intensity={15}
+              >
+                <div className="text-white text-center drop-shadow-lg">
+                  <p className="text-base md:text-lg font-bold">Web Apps</p>
+                  <p className="text-xs mt-1 opacity-90">
+                    Full-Stack Development
+                  </p>
+                </div>
+              </TiltCard>
+              <TiltCard
+                image="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=320&fit=crop&q=80"
+                imageAlt="Technology and Innovation"
+                height="h-32"
+                intensity={15}
+              >
+                <div className="text-white text-center drop-shadow-lg">
+                  <p className="text-base md:text-lg font-bold">Modern Stack</p>
+                  <p className="text-xs mt-1 opacity-90">
+                    Next.js & TypeScript
+                  </p>
+                </div>
+              </TiltCard>
+              <TiltCard
+                image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=200&fit=crop&q=80"
+                imageAlt="SaaS Dashboards and Analytics"
+                height="h-24"
+                colSpan={2}
+                intensity={15}
+              >
+                <div className="text-white text-center drop-shadow-lg">
+                  <p className="text-sm md:text-base font-bold">
+                    SaaS Dashboards & Analytics
+                  </p>
+                </div>
+              </TiltCard>
             </div>
           </motion.div>
         </div>

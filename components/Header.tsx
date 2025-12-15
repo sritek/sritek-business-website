@@ -2,14 +2,15 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { headerContent } from "@/utils/site-content";
 import { routes } from "@/utils/routes";
-import companyLogo from "@/app/icon.png";
 
 export default function Header() {
+  const pathname = usePathname();
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -52,7 +53,9 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 hover:text-primary-600 transition-colors font-medium"
+                className={`text-gray-700 hover:text-primary-600 transition-colors font-medium ${
+                  pathname === link.href ? "text-primary-600" : ""
+                }`}
               >
                 {link.label}
               </Link>
